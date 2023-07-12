@@ -1,0 +1,18 @@
+Received event: {
+    "RequestType": "Create",
+    "ServiceToken": "arn:aws:lambda:us-east-1:071017139570:function:databricks-s3-ingest-90fcd-CopyZipsFunction-kFHQ9SocdhNw",
+    "ResponseURL": "https://cloudformation-custom-resource-response-useast1.s3.amazonaws.com/arn%3Aaws%3Acloudformation%3Aus-east-1%3A071017139570%3Astack/databricks-s3-ingest-90fcd/459a4e20-1c3c-11ee-bcd9-0e472d221d2d%7CCopyZips%7C7d4f6838-e4f1-48ee-b778-116918c802c4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20230706T203340Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Credential=AKIA6L7Q4OWTWFK5LMPE%2F20230706%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=e846d66f62ec4f966f3ce2289bcbde5538fde97112dcf9a35a87ec2a543bbe0e",
+    "StackId": "arn:aws:cloudformation:us-east-1:071017139570:stack/databricks-s3-ingest-90fcd/459a4e20-1c3c-11ee-bcd9-0e472d221d2d",
+    "RequestId": "7d4f6838-e4f1-48ee-b778-116918c802c4",
+    "LogicalResourceId": "CopyZips",
+    "ResourceType": "Custom::CopyZips",
+    "ResourceProperties": {
+        "ServiceToken": "arn:aws:lambda:us-east-1:071017139570:function:databricks-s3-ingest-90fcd-CopyZipsFunction-kFHQ9SocdhNw",
+        "SourceBucket": "databricks-prod-public-cfts",
+        "DestBucket": "databricks-s3-ingest-90fcd-lambdazipsbucket-4fd64ztpmtz3",
+        "Objects": [
+            "functions/packages/s3-ingestion/lambda.zip"
+        ],
+        "Prefix": ""
+    }
+}

@@ -1,0 +1,61 @@
+version: 2
+
+sources:
+  - name: videos_info
+    description: Intermediate layer for the ELT (staging in databricks) Data extracted from youtube API, having the following fields channelTitle, commentCount, description, duration, likeCount, publishedAt, title, video_id, viewCount
+    database: hive_metastore
+    schema: default
+    tables:
+      - name: table_flat
+        description: Table after flattening dicts nested jsons 
+        freshness:
+          warn_after:
+            count: 100
+            period: day
+          error_after:
+            count: 10000
+            period: day
+        loaded_at_field: cast(publishedAt as timestamp)
+        columns:
+          - name: video_id
+            description: Unique ID for this table, transforming natural key into surrogate key with dbutils
+            tests:
+              - unique:
+                  column_name: "video_id"
+                  config:
+                    warn_if: ">1"
+                    error_if: ">10000"
+              - not_null
+          - name: title
+            description: Title of the video, testing for not null as part of 1st normalization
+            tests:
+              - not_null
+          - name: description
+            description: Description of the video, testing for not null as part of 1st normalization
+            tests:
+              - not_null
+          - name: channelTitle
+            description: Channel title of the video, testing for not null as part of 1st normalization
+            tests:
+              - not_null
+          - name: commentCount
+            description: commentCount of the video (int), testing for not null as part of 1st normalization
+            tests:
+              - not_null
+          - name: likeCount
+            description: likeCount of the video (int), testing for not null as part of 1st normalization
+            tests:
+              - not_null
+          - name: viewCount
+            description: viewCount of the video, testing for not null as part of 1st normalization
+            tests:
+              - not_null
+          - name: duration
+            description: duration of the video, testing for not null as part of 1st normalization
+            tests:
+              - not_null
+          - name: publishedAt
+            description: publishedAt of the video, ISO8601 format to UTC standard date-time, testing for not null as part of 1st normalization
+            tests:
+              - not_null
+      - name: all_transcripts

@@ -1,0 +1,29 @@
+{% load static %}
+
+<div class="left-header">
+    <div class="bars">
+        <i class="fas fa-bars" aria-hidden="true"></i>
+        <div class="dropdown">
+            <li><a href="{% url 'perfil' %}">Perfil</a></li>
+            <li><a href="{% url 'sobre' %}">Sobre</a></li>
+        </div>
+    </div>
+    <div class="brand">
+        <a href="{% url 'index' %}">
+            <img src="{% static 'images/logo.svg' %}" alt="">
+        </a>
+    </div>
+    <nav>
+        <ul>    
+            <li class="drop-down-parent"><a href="{% url 'dashboard' %}">Dashboard</a></li>
+            <li class="drop-down-parent"><a href="{% url 'cursos' %}">Cursos</a>
+                <ul class="li-ul-dropdown">
+                    <li><a href="{% url 'cursos_andamento' %}">Cursos em andamento</a></li>
+                    <li><a href="{% url 'planos_estudo' %}">Planos de Estudo</a></li>
+                </ul>
+            </li>        
+            <li class="drop-down-parent"><a href="{% url 'projetos' %}">Projetos</a></li>
+            <li class="drop-down-parent"><a href="{% url 'entrevistas' %}">Entrevistas</a></li>
+        </ul>
+    </nav>
+</div>

@@ -1,0 +1,267 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.1/css/all.css" integrity="sha384-/frq1SRXYH/bSyou/HUp/hib7RVN1TawQYja658FEOodR/FQBKVqT9Ol+Oz3Olq5" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="{% static 'css/nav.css' %}">
+
+    <title>Document</title>
+    <style>
+        #mobile-navbar,
+        .search-mobile,
+        .mobile-search-box {
+        display: none;
+        }
+
+        @media only screen and (max-width: 1400px){
+            header .left-header nav,
+            header .left-header .bars .dropdown,
+            header .right-header .search-form,  
+            header .right-header .user-login{
+                display: none;
+            }
+        
+            #mobile-navbar{
+                display: flex;
+                width: 100vh;
+                height: 100vh;
+                position: fixed;
+                top: 0;
+                left: 0;
+                background-color: transparent;
+                z-index: 999999;
+                overflow: hidden;
+                transition: all .5s ease;
+            }
+        
+            #mobile-navbar .nav-left{
+                width: 100%;
+                background-color: #20162c;
+            }
+        
+            #mobile-navbar .nav-left .login-box{
+                position: relative;
+                width: 100%;
+                left: -40%;
+                top: 70%;
+            }
+        
+            #mobile-navbar .nav-left .login-box h1{
+                font-size: 30px;
+                margin-left: 5%;
+                color: white;                
+                padding-top: 35px
+            }
+        
+            #mobile-navbar .nav-left .login-box:hover{
+                background-color: #6c4896;
+            }
+
+            #mobile-navbar .nav-left .login-box .fa-angle-right{
+                position: relative;
+                margin-left: 83.5%;
+                transform: translate(0, -50%);
+                font-size: 30px;
+                color: white;
+                top: -25px;
+
+            }
+
+            #mobile-navbar .nav-left .hr{
+                width: 100%;
+                height: 1px;
+                background-color: rgb(68, 68, 68);
+            }
+        
+            #mobile-navbar .nav-left .nav-ul ul li{
+                margin: 20px 0;
+                display: block;
+            }
+        
+            #mobile-navbar .nav-left .nav-ul ul li a{
+                display: block;
+                padding: 6px;
+                font-weight: normal;
+                color: white;
+                font-family: 'Oswald', sans-serif;
+                font-size: 22px;
+            }
+        
+            #mobile-navbar .nav-left .nav-ul ul li:hover a{
+                background-color: #6c4896;
+            }
+
+            #mobile-navbar .nav-right{
+                width: 20%;
+                height: 100vh;
+            }
+
+            .search-mobile {
+                display: block;
+            }           
+
+            #mobile-navbar .nav-left .bars{
+                position: relative;
+                background-color: #20162c;
+                padding: 1%;
+                margin: 1%;                
+                left: 0.5%;
+                top: 1.5%;
+            }
+            
+            #mobile-navbar .nav-left .bars .fa-bars{
+                color: rgb(177, 177, 177);
+                cursor: pointer;
+                padding: 20px;
+                margin-left: 30px;
+                margin-top: 15px;
+                position: absolute;
+            }
+        
+            #mobile-navbar .nav-left .bars > .dropdown{
+                border-radius: 5px;
+                position: absolute;
+                top: 10px;
+                left: 50%;
+                transform: translate(-50%);
+                text-align: start;
+                height: 0;
+                transition: all .3 ease;
+                overflow: hidden;
+                visibility: hidden;
+            }
+            
+            #mobile-navbar .nav-left .search-form .search-bar{
+                position: relative;
+                left: 19%;
+                margin-top: 4%;
+                background: transparent;
+                margin-bottom: -10%
+            }
+
+            #mobile-navbar .nav-left .search-form .search-bar input{
+                background: transparent;
+                border: none;
+                outline: none;
+                border-bottom: 1px solid rgb(177, 177, 177);
+                font-size: 18px;
+                width: 30%;
+                font-weight: normal;
+                transition: all .2s ease;
+                left: 90%;
+                bottom: 10%;
+                color: white;
+                cursor: pointer;
+            }
+    
+            #mobile-navbar .nav-left .search-form .search-bar input:focus{  
+                border-bottom: 1px solid #ec6f09;
+            }
+
+            #mobile-navbar .nav-left .search-form .search-bar .search-icon{
+                color: rgb(177, 177, 177);
+            }
+        }
+        
+        @media only screen and (max-width: 600px){
+                header{
+                    padding: 20px;
+                    background: #20162c;
+                }
+
+                header .right-header{
+                    margin-top: -17px;
+                }
+
+                header .right-header .btn1 a{
+                    margin: 0px;
+                    padding: 6px 7px;
+                    font-size: 13px;
+                }
+
+                header .left-header .brand a img{
+                    width: 110px;
+                    margin-top: -15px;
+                    margin-left: -70px
+                }
+
+                #mobile-navbar .nav-left .login-box{
+                    position: relative;
+                    width: 100%;
+                    left: -40%;
+                    top: 63%;
+                }
+
+                @media only screen and (max-width: 375px){
+                    #mobile-navbar .nav-left .login-box{
+                        position: relative;
+                        width: 100%;
+                        left: -40%;
+                        top: 69%;
+                    }
+
+                }
+        }
+        
+    </style>
+</head>
+<body>
+
+    <!-- nav start -->
+    <header>
+
+        {% include 'partials/_left_header.html' %}
+
+        {% include 'partials/_right_header.html' %}
+
+    </header> 
+
+    <!-- nav end -->
+
+    <!-- mobile nav start -->
+    
+    {% include 'partials/_mobile_nav.html' %}
+    
+    <!-- mobile nav end -->
+
+    <!-- mobile search start -->
+    <!-- mobile search end -->
+    
+    <div class="slider">
+        <h1>Formação Python</h1>
+        {% include 'partials/index.html' %}
+    </div class="slider">
+
+    <div class="slider">
+        <h1>Formação Banco de Dados</h1>
+        {% include 'partials/index.html' %}
+    </div class="slider">
+
+    <div class="slider">
+        <h1>Formação Cloud</h1>
+        {% include 'partials/index.html' %}
+    </div class="slider">
+
+    <div class="slider">
+        <h1>Formação Engenheiro de Dados</h1>
+        {% include 'partials/index.html' %}
+    </div class="slider">
+
+    <!-- scripts start -->
+    <script src="{% static 'js/app.js' %}"></script>
+    
+    <!-- scripts end -->
+
+
+</body>
+</html>

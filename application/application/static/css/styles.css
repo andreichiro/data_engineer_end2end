@@ -1,0 +1,78 @@
+html, body {
+  position: relative;
+  height: 100%;
+}
+
+.slider{
+  margin-top: 200px;
+  padding-top: 10px;
+  padding-bottom: -20px;
+  margin-bottom: -100px;
+}
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+@font-face { font-family: MatrixBug; src: url('Matrix.TTF'); } 
+
+h1 {
+  font-weight: 850;
+  font-family: 'MatrixBug';
+  color: #20162c;
+  text-align: center;
+}
+
+
+:root {
+  --swiper-theme-color: #fff;
+}
+
+.netflix-slider .swiper-wrapper {
+  padding: 20px 0;
+}
+
+.netflix-slider .swiper-slide {
+  -webkit-transition: 250ms all;
+  transition: 250ms all;
+}
+
+.netflix-slider .swiper-slide:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  z-index: 1;
+}
+
+.netflix-slider .swiper-slide:first-child:hover {
+  margin: 0 40px;
+}
+
+.netflix-slider .swiper-slide:last-child:hover {
+  margin: 0 -40px;
+}
+
+
+
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,39 @@
+- hosts: localhost
+  tasks:
+  - name: Python, virtualenv and docker dependencies
+    apt:
+      pkg:
+      - python3
+      - virtualenv
+      - apt-transport-https
+      - ca-certificates
+      - curl
+      - python3-setuptools
+      state: latest
+      update_cache: yes
+    become: yes
+
+  - name: Docker GPG apt Key
+    ansible.builtin.apt_key:
+      url: https://download.docker.com/linux/ubuntu/gpg
+      state: present
+      keyring: /etc/apt/trusted.gpg.d/ansible-ubuntu-ansible.gpg
+
+  - name: Docker Repository
+    apt_repository:
+      repo: deb https://download.docker.com/linux/ubuntu focal stable
+      state: present
+
+  - name: Apt and Docker-ce
+    apt:
+      name: docker-ce
+      state: latest
+      update_cache: true
+
+  - name: Docker module for python
+    pip:
+      name: docker
+
+  - name: Docker module for python
+    pip:
+      name: docker-compose

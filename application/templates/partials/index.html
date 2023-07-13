@@ -1,0 +1,88 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Netflix 1.1</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="{% static 'css/nav.css' %}">
+
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="{% static 'package/css/swiper.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+  <!-- Demo styles -->
+  <style>
+
+  </style>
+</head>
+<body>
+  <!-- Swiper -->
+  <div class="netflix-slider">
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="{% static 'img/1.jpg' %}" alt="Movie Title"></div>
+        <div class="swiper-slide"><img src="{% static 'img/2.jpg' %}" alt="Movie Title"></div>
+        <div class="swiper-slide"><img src="{% static 'img/3.jpg' %}" alt="Movie Title"></div>
+        <div class="swiper-slide"><img src="{% static 'img/4.jpg' %}" alt="Movie Title"></div>
+        <div class="swiper-slide"><img src="{% static 'img/5.jpg' %}" alt="Movie Title"></div>
+        <div class="swiper-slide"><img src="{% static 'img/6.jpg' %}" alt="Movie Title"></div>
+        <div class="swiper-slide"><img src="{% static 'img/7.jpg' %}" alt="Movie Title"></div>
+        <div class="swiper-slide"><img src="{% static 'img/8.jpg' %}" alt="Movie Title"></div>
+        <div class="swiper-slide"><img src="{% static 'img/9.jpg' %}" alt="Movie Title"></div>
+        <div class="swiper-slide"><img src="{% static 'img/10.jpg' %}" alt="Movie Title"></div>
+
+      </div>
+      <!-- Add Pagination -->
+      <!-- <div class="swiper-pagination"></div> -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+  </div>
+
+  <!-- Swiper JS -->
+  <script src="{% static 'package/js/swiper.min.js' %}"></script>
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+      slidesPerView: 4,
+      spaceBetween: 10,
+      slidesPerGroup: 2,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+
+      breakpoints: {
+        100: {
+          slidesPerView: 1,
+          spaceBetween: 10,
+        },
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 10,
+        },
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 10,
+        },
+        1024: {
+          slidesPerView: 4,
+          spaceBetween: 10,
+        },
+      }
+    });
+
+
+
+
+  </script>
+</body>
+</html>

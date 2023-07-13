@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAEI,sBAFkB,AACnB,2BAA2B,CAC1B,aAAa,CAAC;EACZ,0BAA0B,EAAE,QAAQ;CACrC;;AAJL,AAME,sBANoB,CAMpB,aAAa,CAAC;EACZ,cAAc,EAAE,IAAI;EACpB,mBAAmB,EAAE,OAAO;CAI7B;;AAZH,AASI,sBATkB,CAMpB,aAAa,CAGX,aAAa,CAAC;EACZ,cAAc,EAAE,IAAI;CACrB;;AAXL,AAcI,sBAdkB,CAapB,oBAAoB,EAbtB,sBAAsB,CAapB,oBAAoB,CACb,oBAAoB,CAAC;EACxB,cAAc,EAAE,IAAI;CACrB",
+    "sources": [
+        "effect-fade.scss"
+    ],
+    "names": [],
+    "file": "effect-fade.css"
+}

@@ -1,0 +1,247 @@
+@font-face { font-family: MatrixBug; src: url('Matrix.TTF'); } 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: 850;
+    font-family: 'MatrixBug';
+}
+    body, html{
+        width: 100%;
+    }
+    
+    a{
+        text-decoration: none;
+    }
+    ul, li{
+        list-style: none;
+    }
+
+    button{
+        outline: none;
+        border: none;
+        background: none;
+    }
+
+    header{
+        background: #20162c;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 50px 60px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9999;
+        }
+    
+    header .left-header{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    
+    header .left-header .bars{
+        position: relative;
+    }
+    
+    header .left-header .bars .fa-bars{
+        margin-right: 20px;
+        color: rgb(177, 177, 177);
+        cursor: pointer;
+        padding: 10px;
+    }
+
+    header .left-header .brand a img{
+        width: 150px;
+        margin-top: -25px;
+    }
+
+    header .left-header nav > ul{
+        display: flex;
+        margin-top: 8px;
+    }
+
+    header .left-header nav > ul li{
+        margin: 0 15px;
+        padding: 10px;
+    }
+
+    header .left-header nav > ul li a{
+        font-family: 'Oswald';
+        font-weight: 500;
+        color: white;
+    }
+
+    header .left-header nav > ul li a:hover{
+        color: #ec6f09;
+    }
+
+    /* Nav bar dropdown */
+
+    header .left-header .bars > .dropdown{
+        border-radius: 5px;
+        position: absolute;
+        top: 30px;
+        left: 50%;
+        padding: 10px;
+        transform: translate(-50%);
+        text-align: start;
+        height: 0;
+        transition: all .3 ease;
+        overflow: hidden;
+        visibility: hidden;
+    }
+
+    header .left-header .bars > .dropdown > li{
+        display: block;
+        margin: 10px;  
+    }
+
+    header .left-header .bars > .dropdown > li a{
+        padding: 25px;
+        margin-left: 30px;
+        margin-top: 10px;
+        font-weight: normal;
+        font-family: 'Oswald', sans-serif;
+        font-size: 16px;
+        display: block;      
+        color: white;
+        background-color: #20162c;          
+    }
+
+    header .left-header .bars > .dropdown > li a:hover{
+        background-color: #6c4896;
+    }
+
+    header .left-header .bars:hover > .dropdown{
+        visibility: visible;
+        height: 250px;
+        transition: all .3s ease;
+    } 
+
+    .drop-down-parent{
+        position: relative;
+    }
+
+    .drop-down-parent .li-ul-dropdown{
+        background: #20162c;
+        width: 180px;
+        border-radius: 5px;
+        position: absolute;
+        top: 30px;
+        left: 50%;
+        transform: translate(-50%);
+        text-align: start;
+        transition: all .3 s ease;
+        overflow: hidden;
+        visibility: hidden;
+        padding: 5px 0px 15px 0px;
+    }
+
+    .drop-down-parent .li-ul-dropdown li a{
+        padding: 10px 15px;
+        font-weight: normal;
+        font-size: 16px;
+        display: block;
+        color: white;
+        font-family: 'Oswald', sans-serif;
+    }
+
+    .drop-down-parent .li-ul-dropdown li a:hover{
+        background-color: #6c4896;
+    }
+
+    .drop-down-parent:hover .li-ul-dropdown{
+        visibility: visible;
+        top: 40px;
+        transition: all .3s ease;
+    }
+
+    header .left-header nav > ul li .li-ul-dropdown a:hover{
+        color: white;
+    }
+
+    header .right-header{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 1px;
+        padding: 15px;
+    }
+
+    header .right-header .search-form .search-bar{
+        position: relative;
+        margin-top: -5px;
+        margin-right: 10px;
+    }
+
+    header .right-header .search-form .search-bar input{
+        background: transparent;
+        border: none;
+        outline: none;
+        border-bottom: 1px solid rgb(177, 177, 177);
+        font-size: 18px;
+        width: 200px;
+        font-weight: normal;
+        transition: all .2s ease;
+        color: white;
+    }
+
+    header .right-header .search-form .search-bar input:focus{
+        width: 250px;
+        border-bottom: 1px solid #ec6f09;
+    }
+
+    header .right-header .search-form .search-bar > .search-icon{
+        position: relative;
+        right: 10px;
+        cursor: pointer;
+        color: rgb(177, 177, 177);
+    }
+
+    header .right-header .btn1{
+        width: 250px;
+
+    }
+
+    header .right-header .btn1 a{
+        color: #20162c;
+        padding: 5px 20px;
+        margin: 0 20px;
+        background: #ec6f09;
+        border-radius: 5px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    header .right-header .btn1 a:hover{
+    color: white;
+    }
+
+    header .right-header .user-login a:hover{
+        color: #ec6f09;
+        }
+
+    header .right-header .user-login{
+        margin-top: -5px;
+        margin-right: 50px;
+    }
+
+    header .right-header .user-login a{
+        text-transform: uppercase;
+        color: white;
+    }
+
+    .swiper-button-next {
+        color: #ec6f09 !important;        
+    }
+
+    .swiper-button-prev {
+        color: #ec6f09 !important;        
+    }
+
+    
+    

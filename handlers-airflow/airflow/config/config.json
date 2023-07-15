@@ -1,0 +1,6 @@
+{
+    "youtube": {
+        "api_service_name": "youtube",
+        "api_version": "v3"
+    }
+}

@@ -33,7 +33,54 @@
   - name: Docker module for python
     pip:
       name: docker
+      state: present
 
   - name: Docker module for python
     pip:
       name: docker-compose
+      state: present
+
+  - name: Pandas
+    pip:
+      name: pandas
+      state: present
+
+  - name: Pyspark
+    pip:
+      name: pyspark
+      state: present
+
+  - name: Boto3
+    pip:
+      name: boto3
+      state: present
+
+  - name: Google API
+    pip:
+      name: google-api-python-client
+      state: present
+
+  - name: Pytube
+    pip:
+      name: pytube
+      state: present
+
+  - name: Pytest
+    pip:
+      name: pytest
+      state: present
+
+  - name: Unit test
+    pip:
+      name: unittest2
+      state: present
+
+  - name: Set environment variables
+    lineinfile:
+      path: /etc/environment
+      line: "{{ item }}"
+    loop:
+      - "YOUTUBE_API_KEY='your_youtube_api_key'"
+      - "AWS_ACCESS_KEY_ID='your_aws_access_key_id'"
+      - "AWS_SECRET_ACCESS_KEY='your_aws_secret_access_key'"
+    become: yes

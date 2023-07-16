@@ -1,4 +1,4 @@
-from abstract_classes.abstract_operator import AbstractOperator
+from ..abstract_classes.abstract_operator import AbstractOperator
 
 class AWSOperator(AbstractOperator):
     def __init__(self, aws_hook):

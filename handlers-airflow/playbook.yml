@@ -75,6 +75,19 @@
       name: unittest2
       state: present
 
+  - name: Create directories
+    file:
+      path: "{{ item }}"
+      state: directory
+      owner: 50000
+      group: 50000
+      mode: '0755'
+    loop:
+      - /opt/airflow/dags
+      - /opt/airflow/logs
+      - /opt/airflow/plugins
+      - /opt/airflow/requirements
+
 - hosts: localhost
   vars:
     airflow_proj_dir: /home/user/airflow_project

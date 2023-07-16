@@ -6,12 +6,12 @@
       - apt-transport-https
       - ca-certificates
       - curl
-      - python3
+      - python3.9
       - virtualenv
       - apt-transport-https
       - ca-certificates
       - curl
-      - python3-setuptools
+      - python3.9-setuptools
       state: latest
       update_cache: yes
 

@@ -71,7 +71,8 @@ x-airflow-common:
     AIRFLOW__SCHEDULER__ENABLE_HEALTH_CHECK: 'true'
     # WARNING: Use _PIP_ADDITIONAL_REQUIREMENTS option ONLY for a quick checks
     # for other purpose (development, test and especially production usage) build/extend Airflow image.
-    _PIP_ADDITIONAL_REQUIREMENTS: ${_PIP_ADDITIONAL_REQUIREMENTS:-}
+    _PIP_ADDITIONAL_REQUIREMENTS: ${_PIP_ADDITIONAL_REQUIREMENTS:-pandas pyspark boto3 google-api-python-client pytube pytest unittest2}
+
   volumes:
     - ${AIRFLOW_PROJ_DIR:-.}/dags:/opt/airflow/dags
     - ${AIRFLOW_PROJ_DIR:-.}/logs:/opt/airflow/logs
@@ -115,6 +116,11 @@ services:
 
   airflow-webserver:
     <<: *airflow-common
+    environment:
+      <<: *airflow-common-env  
+      YOUTUBE_API_KEY: 'your_youtube_api_key'
+      AWS_ACCESS_KEY_ID: 'your_aws_access_key_id'
+      AWS_SECRET_ACCESS_KEY: 'your_aws_secret_access_key'
     command: webserver
     ports:
       - "8080:8080"
@@ -132,6 +138,11 @@ services:
 
   airflow-scheduler:
     <<: *airflow-common
+    environment:
+      <<: *airflow-common-env  
+      YOUTUBE_API_KEY: 'your_youtube_api_key'
+      AWS_ACCESS_KEY_ID: 'your_aws_access_key_id'
+      AWS_SECRET_ACCESS_KEY: 'your_aws_secret_access_key'
     command: scheduler
     healthcheck:
       test: ["CMD", "curl", "--fail", "http://localhost:8974/health"]
@@ -158,6 +169,9 @@ services:
       start_period: 30s
     environment:
       <<: *airflow-common-env
+      YOUTUBE_API_KEY: 'your_youtube_api_key'
+      AWS_ACCESS_KEY_ID: 'your_aws_access_key_id'
+      AWS_SECRET_ACCESS_KEY: 'your_aws_secret_access_key'
       # Required to handle warm shutdown of the celery workers properly
       # See https://airflow.apache.org/docs/docker-stack/entrypoint.html#signal-propagation
       DUMB_INIT_SETSID: "0"

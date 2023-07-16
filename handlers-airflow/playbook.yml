@@ -47,14 +47,6 @@
       - ./plugins
       - ./config
       
-  - name: Copy airflow-project contents to destination
-    copy:
-      src: ./airflow-project/
-      dest: ./dags/
-  
-  - name: move airflow-project/dags to dags
-    command: mv ./dags/dags/ ./dags/
-        
   - name: Create .env file
     copy:
       dest: ./.env

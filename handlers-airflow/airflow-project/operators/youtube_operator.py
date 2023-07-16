@@ -1,5 +1,5 @@
-from abstract_classes.abstract_operator import AbstractOperator
-from youtube.youtube_video_details import YouTubeVideoDetails
+from ..abstract_classes.abstract_operator import AbstractOperator
+from ..youtube.youtube_video_details import YouTubeVideoDetails
 
 class YouTubeOperator(AbstractOperator):
     def __init__(self, youtube_hook):

@@ -1,5 +1,5 @@
 from pyspark.sql import SparkSession
-from abstract_classes.abstract_processor import AbstractProcessor
+from ..abstract_classes.abstract_processor import AbstractProcessor
 
 class SparkProcessor(AbstractProcessor):
     def process(self, video_details, file_path):

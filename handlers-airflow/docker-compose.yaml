@@ -263,8 +263,9 @@ services:
           echo "   https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html#before-you-begin"
           echo
         fi
+        chown -R "${AIRFLOW_UID}:0" /opt/airflow/logs
         mkdir -p /sources/logs /sources/dags /sources/plugins
-        chown -R "${AIRFLOW_UID}:0" /sources/{logs,dags,plugins}
+        chown -R "${AIRFLOW_UID}:0" /sources/{logs,dags,plugins}        
         exec /entrypoint airflow db init
         airflow users create --username admin --password admin --firstname Andre --lastname Ichiro --role Admin --email andreichiro@gmail.com
         exec /entrypoint airflow version

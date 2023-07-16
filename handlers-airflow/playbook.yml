@@ -18,27 +18,21 @@
   - name: Docker GPG apt Key
     ansible.builtin.apt_key:
       url: https://download.docker.com/linux/ubuntu/gpg
-      state: present
       keyring: /etc/apt/trusted.gpg.d/ansible-ubuntu-ansible.gpg
 
   - name: Docker Repository
     apt_repository:
       repo: deb https://download.docker.com/linux/ubuntu focal stable
-      state: present
 
   - name: Apt and Docker-ce
     apt:
       name: docker-ce
-      state: latest
       update_cache: true
 
   - name: Docker module for python
     pip:
       name: docker
-      state: present
 
   - name: Docker module for python
     pip:
       name: docker-compose
-      state: present
-

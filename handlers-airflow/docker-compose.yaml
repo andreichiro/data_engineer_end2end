@@ -54,9 +54,6 @@ x-airflow-common:
   # build: .
   environment:
     &airflow-common-env
-    AIRFLOW__CORE__DAGS_FOLDER: "/opt/airflow/dags"
-    AIRFLOW__CORE__BASE_LOG_FOLDER: "/opt/airflow/logs"
-    AIRFLOW__CORE__PLUGINS_FOLDER: "/opt/airflow/plugins"  
     AIRFLOW__CORE__EXECUTOR: CeleryExecutor
     AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow
     # For backward compatibility, with Airflow <2.3
@@ -67,7 +64,6 @@ x-airflow-common:
     AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'true'
     AIRFLOW__CORE__LOAD_EXAMPLES: 'true'
     AIRFLOW__API__AUTH_BACKENDS: 'airflow.api.auth.backend.basic_auth,airflow.api.auth.backend.session'
-    AIRFLOW_UID: 50000
     # yamllint disable rule:line-length
     # Use simple http server on scheduler for health checks
     # See https://airflow.apache.org/docs/apache-airflow/stable/administration-and-deployment/logging-monitoring/check-health.html#scheduler-health-check-server
@@ -75,8 +71,7 @@ x-airflow-common:
     AIRFLOW__SCHEDULER__ENABLE_HEALTH_CHECK: 'true'
     # WARNING: Use _PIP_ADDITIONAL_REQUIREMENTS option ONLY for a quick checks
     # for other purpose (development, test and especially production usage) build/extend Airflow image.
-    _PIP_ADDITIONAL_REQUIREMENTS: ${_PIP_ADDITIONAL_REQUIREMENTS:-pandas pyspark boto3 google-api-python-client pytube pytest unittest2}
-  
+    _PIP_ADDITIONAL_REQUIREMENTS: ${_PIP_ADDITIONAL_REQUIREMENTS:-}
   volumes:
     - ${AIRFLOW_PROJ_DIR:-.}/dags:/opt/airflow/dags
     - ${AIRFLOW_PROJ_DIR:-.}/logs:/opt/airflow/logs
@@ -120,11 +115,6 @@ services:
 
   airflow-webserver:
     <<: *airflow-common
-    environment:
-      <<: *airflow-common-env  
-      YOUTUBE_API_KEY: 'your_youtube_api_key'
-      AWS_ACCESS_KEY_ID: 'your_aws_access_key_id'
-      AWS_SECRET_ACCESS_KEY: 'your_aws_secret_access_key'
     command: webserver
     ports:
       - "8080:8080"
@@ -142,11 +132,6 @@ services:
 
   airflow-scheduler:
     <<: *airflow-common
-    environment:
-      <<: *airflow-common-env  
-      YOUTUBE_API_KEY: 'your_youtube_api_key'
-      AWS_ACCESS_KEY_ID: 'your_aws_access_key_id'
-      AWS_SECRET_ACCESS_KEY: 'your_aws_secret_access_key'
     command: scheduler
     healthcheck:
       test: ["CMD", "curl", "--fail", "http://localhost:8974/health"]
@@ -173,9 +158,6 @@ services:
       start_period: 30s
     environment:
       <<: *airflow-common-env
-      YOUTUBE_API_KEY: 'your_youtube_api_key'
-      AWS_ACCESS_KEY_ID: 'your_aws_access_key_id'
-      AWS_SECRET_ACCESS_KEY: 'your_aws_secret_access_key'
       # Required to handle warm shutdown of the celery workers properly
       # See https://airflow.apache.org/docs/docker-stack/entrypoint.html#signal-propagation
       DUMB_INIT_SETSID: "0"
@@ -263,11 +245,8 @@ services:
           echo "   https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html#before-you-begin"
           echo
         fi
-        chown -R "${AIRFLOW_UID}:0" /opt/airflow/logs
         mkdir -p /sources/logs /sources/dags /sources/plugins
-        chown -R "${AIRFLOW_UID}:0" /sources/{logs,dags,plugins}        
-        exec /entrypoint airflow db init
-        airflow users create --username admin --password admin --firstname Andre --lastname Ichiro --role Admin --email andreichiro@gmail.com
+        chown -R "${AIRFLOW_UID}:0" /sources/{logs,dags,plugins}
         exec /entrypoint airflow version
     # yamllint enable rule:line-length
     environment:

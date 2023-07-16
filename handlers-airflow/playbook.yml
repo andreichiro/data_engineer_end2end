@@ -37,33 +37,3 @@
       name: docker-compose
       state: present
 
-  - name: Create airflow user
-    user:
-      name: airflow
-      uid: 50000
-      group: root
-      system: yes
-    become: yes
-      
-  - name: Create directories
-    file:
-      path: "{{ item }}"
-      state: directory
-      owner: airflow
-      group: root
-      mode: '0755'
-    loop:
-      - /home/user/airflow_project/dags
-      - /home/user/airflow_project/logs
-      - /home/user/airflow_project/plugins
-      - /home/user/airflow_project/requirements
-
-- hosts: localhost
-  vars:
-    airflow_proj_dir: .
-    tasks:
-    - name: Copy airflow folder
-      ansible.builtin.copy:
-        src: airflow/*
-        dest: "{{ airflow_proj_dir }}/dags/"
-        mode: '0644'

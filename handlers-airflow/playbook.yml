@@ -6,12 +6,12 @@
       - apt-transport-https
       - ca-certificates
       - curl
-      - python3.9
+      - python3
       - virtualenv
       - apt-transport-https
       - ca-certificates
       - curl
-      - python3.9-setuptools
+      - python3-setuptools
       state: latest
       update_cache: yes
 
@@ -36,3 +36,23 @@
   - name: Docker module for python
     pip:
       name: docker-compose
+
+  - name: Create necessary directories
+    file:
+      path: "{{ item }}"
+      state: directory
+    with_items:
+      - ./dags
+      - ./logs
+      - ./plugins
+      - ./config
+
+  - name: Create .env file
+    copy:
+      dest: ./.env
+      content: |
+        AIRFLOW_UID=50000
+
+  - name: Run docker-compose up airflow-init
+    command:
+      cmd: docker-compose up airflow-init

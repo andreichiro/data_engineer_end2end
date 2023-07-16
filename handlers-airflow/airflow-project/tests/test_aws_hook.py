@@ -1,6 +1,6 @@
 import unittest
 from unittest.mock import patch
-from hooks.aws_hook import AWSHook
+from ..hooks.aws_hook import AWSHook
 
 class TestAWSHook(unittest.TestCase):
     @patch('boto3.client')

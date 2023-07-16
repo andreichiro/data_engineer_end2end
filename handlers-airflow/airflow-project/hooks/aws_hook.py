@@ -1,5 +1,5 @@
 import boto3
-from ..abstract_classes.abstract_hook import AbstractHook
+from dags.abstract_classes.abstract_hook import AbstractHook
 
 class AWSHook(AbstractHook):
     def __init__(self, aws_access_key_id, aws_secret_access_key):

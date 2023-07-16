@@ -47,18 +47,13 @@
       - ./plugins
       - ./config
       
-  - name: Copy airflow-project dag contents to destination
+  - name: Copy airflow-project contents to destination
     copy:
-      src: ./airflow-project/dags/
-      dest: ./dags
-
-  - name: Copy everything except 'dags' from airflow-project to current directory
-    synchronize:
       src: ./airflow-project/
-      dest: ./
-      delete: no
-      rsync_opts:
-        - "--exclude=dags/"
+      dest: ./dags/
+  
+  - name: move airflow-project/dags to dags
+    command: mv ./dags/dags/ ./dags/
         
   - name: Create .env file
     copy:

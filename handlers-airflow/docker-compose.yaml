@@ -54,6 +54,9 @@ x-airflow-common:
   # build: .
   environment:
     &airflow-common-env
+    AIRFLOW__CORE__DAGS_FOLDER: "/opt/airflow/dags"
+    AIRFLOW__CORE__BASE_LOG_FOLDER: "/opt/airflow/logs"
+    AIRFLOW__CORE__PLUGINS_FOLDER: "/opt/airflow/plugins"  
     AIRFLOW__CORE__EXECUTOR: CeleryExecutor
     AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow
     # For backward compatibility, with Airflow <2.3
@@ -263,6 +266,7 @@ services:
         mkdir -p /sources/logs /sources/dags /sources/plugins
         chown -R "${AIRFLOW_UID}:0" /sources/{logs,dags,plugins}
         exec /entrypoint airflow db init
+        airflow users create --username admin --password admin --firstname Andre --lastname Ichiro --role Admin --email andreichiro@gmail.com
         exec /entrypoint airflow version
     # yamllint enable rule:line-length
     environment:

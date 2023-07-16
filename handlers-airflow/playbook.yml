@@ -42,11 +42,15 @@
       path: "{{ item }}"
       state: directory
     with_items:
-      - ./dags
       - ./logs
       - ./plugins
       - ./config
-
+      
+  - name: Copy airflow-project dag contents to destination
+    copy:
+      src: ./airflow-project/
+      dest: .
+      
   - name: Create .env file
     copy:
       dest: ./.env

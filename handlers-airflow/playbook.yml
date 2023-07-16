@@ -75,18 +75,12 @@
       name: unittest2
       state: present
 
-  - name: Set environment variables
-    lineinfile:
-      path: /etc/environment
-      line: "{{ item }}"
-    loop:
-      - "YOUTUBE_API_KEY='your_youtube_api_key'"
-      - "AWS_ACCESS_KEY_ID='your_aws_access_key_id'"
-      - "AWS_SECRET_ACCESS_KEY='your_aws_secret_access_key'"
-    become: yes
-      
-  - name: Copy airflow folder
-    ansible.builtin.copy:
-      src: airflow/*
-      dest: dags/
-    mode: '0644'
+- hosts: localhost
+  vars:
+    airflow_proj_dir: /home/user/airflow_project
+    tasks:
+    - name: Copy airflow folder
+      ansible.builtin.copy:
+        src: airflow/*
+        dest: "{{ airflow_proj_dir }}/dags/"
+        mode: '0644'

@@ -3,12 +3,9 @@
   - name: Python, virtualenv and docker dependencies
     apt:
       pkg:
-      - python3
-      - virtualenv
       - apt-transport-https
       - ca-certificates
       - curl
-      - python3-setuptools
       state: latest
       update_cache: yes
     become: yes
@@ -40,57 +37,30 @@
       name: docker-compose
       state: present
 
-  - name: Pandas
-    pip:
-      name: pandas
-      state: present
-
-  - name: Pyspark
-    pip:
-      name: pyspark
-      state: present
-
-  - name: Boto3
-    pip:
-      name: boto3
-      state: present
-
-  - name: Google API
-    pip:
-      name: google-api-python-client
-      state: present
-
-  - name: Pytube
-    pip:
-      name: pytube
-      state: present
-
-  - name: Pytest
-    pip:
-      name: pytest
-      state: present
-
-  - name: Unit test
-    pip:
-      name: unittest2
-      state: present
-
+  - name: Create airflow user
+    user:
+      name: airflow
+      uid: 50000
+      group: root
+      system: yes
+    become: yes
+      
   - name: Create directories
     file:
       path: "{{ item }}"
       state: directory
-      owner: 50000
-      group: 50000
+      owner: airflow
+      group: root
       mode: '0755'
     loop:
-      - /opt/airflow/dags
-      - /opt/airflow/logs
-      - /opt/airflow/plugins
-      - /opt/airflow/requirements
+      - /home/user/airflow_project/dags
+      - /home/user/airflow_project/logs
+      - /home/user/airflow_project/plugins
+      - /home/user/airflow_project/requirements
 
 - hosts: localhost
   vars:
-    airflow_proj_dir: /home/user/airflow_project
+    airflow_proj_dir: .
     tasks:
     - name: Copy airflow folder
       ansible.builtin.copy:

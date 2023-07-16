@@ -42,15 +42,24 @@
       path: "{{ item }}"
       state: directory
     with_items:
+      - ./dags
       - ./logs
       - ./plugins
       - ./config
       
   - name: Copy airflow-project dag contents to destination
     copy:
+      src: ./airflow-project/dags/
+      dest: ./dags
+
+  - name: Copy everything except 'dags' from airflow-project to current directory
+    synchronize:
       src: ./airflow-project/
-      dest: .
-      
+      dest: ./
+      delete: no
+      rsync_opts:
+        - "--exclude=dags/"
+        
   - name: Create .env file
     copy:
       dest: ./.env

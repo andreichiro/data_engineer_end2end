@@ -1,0 +1,14 @@
+Rendered Template
+templates_dict
+op_args
+op_kwargs
+Dict item "playlists"
+1
+['https://www.youtube.com/playlist?list=PL1v8zpldgH3qQB5Pz6ZSTTDLu0BjAJYNf', 'https://www.youtube.com/playlist?list=PL1v8zpldgH3oNcr8es3ov4_4DF8K0Ps6-', 'https://www.youtube.com/playlist?list=PL1v8zpldgH3oeP7PBttxM7esceVXD63_v', 'https://www.youtube.com/playlist?list=PL1v8zpldgH3pXjOUhfPVH3EhW4WMHVYPh']
+op_kwargs.playlists
+['https://www.youtube.com/playlist?list=PL1v8zpldgH3qQB5Pz6ZSTTDLu0BjAJYNf',
+ 'https://www.youtube.com/playlist?list=PL1v8zpldgH3oNcr8es3ov4_4DF8K0Ps6-',
+ 'https://www.youtube.com/playlist?list=PL1v8zpldgH3oeP7PBttxM7esceVXD63_v',
+ 'https://www.youtube.com/playlist?list=PL1v8zpldgH3pXjOUhfPVH3EhW4WMHVYPh']
+Version: v2.6.3
+Git Version: .release:eb24742d5300d2d87b17b4bcd67f639dbafd9818

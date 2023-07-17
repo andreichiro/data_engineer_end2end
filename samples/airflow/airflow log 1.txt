@@ -1,0 +1,16 @@
+*** Found local files:
+***   * /opt/airflow/logs/dag_id=youtube_video_details_dag/run_id=manual__2023-07-17T21:49:45.833939+00:00/task_id=fetch_and_upload/attempt=1.log
+[2023-07-17, 21:49:49 UTC] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: youtube_video_details_dag.fetch_and_upload manual__2023-07-17T21:49:45.833939+00:00 [queued]>
+[2023-07-17, 21:49:49 UTC] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: youtube_video_details_dag.fetch_and_upload manual__2023-07-17T21:49:45.833939+00:00 [queued]>
+[2023-07-17, 21:49:49 UTC] {taskinstance.py:1308} INFO - Starting attempt 1 of 1
+[2023-07-17, 21:49:49 UTC] {taskinstance.py:1327} INFO - Executing <Task(PythonOperator): fetch_and_upload> on 2023-07-17 21:49:45.833939+00:00
+[2023-07-17, 21:49:49 UTC] {standard_task_runner.py:57} INFO - Started process 328 to run task
+[2023-07-17, 21:49:49 UTC] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'youtube_video_details_dag', 'fetch_and_upload', 'manual__2023-07-17T21:49:45.833939+00:00', '--job-id', '12', '--raw', '--subdir', 'DAGS_FOLDER/youtube_aws_dag.py', '--cfg-path', '/tmp/tmpdipj6hgw']
+[2023-07-17, 21:49:49 UTC] {standard_task_runner.py:85} INFO - Job 12: Subtask fetch_and_upload
+[2023-07-17, 21:49:49 UTC] {task_command.py:410} INFO - Running <TaskInstance: youtube_video_details_dag.fetch_and_upload manual__2023-07-17T21:49:45.833939+00:00 [running]> on host a45dd4481fca
+[2023-07-17, 21:49:49 UTC] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='youtube_video_details_dag' AIRFLOW_CTX_TASK_ID='fetch_and_upload' AIRFLOW_CTX_EXECUTION_DATE='2023-07-17T21:49:45.833939+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-07-17T21:49:45.833939+00:00'
+[2023-07-17, 21:49:49 UTC] {__init__.py:50} INFO - file_cache is only supported with oauth2client<4.0.0
+[2023-07-17, 21:49:51 UTC] {python.py:183} INFO - Done. Returned value was: None
+[2023-07-17, 21:49:51 UTC] {taskinstance.py:1350} INFO - Marking task as SUCCESS. dag_id=youtube_video_details_dag, task_id=fetch_and_upload, execution_date=20230717T214945, start_date=20230717T214949, end_date=20230717T214951
+[2023-07-17, 21:49:51 UTC] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2023-07-17, 21:49:51 UTC] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -52,7 +52,11 @@
       dest: ./.env
       content: |
         AIRFLOW_UID=50000
-
+  
+  - name: Docker-compose build
+    command:
+      cmd: docker-compose build
+      
   - name: Run docker-compose up airflow-init
     command:
       cmd: docker-compose up airflow-init

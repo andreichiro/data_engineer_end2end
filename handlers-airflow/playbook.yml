@@ -57,18 +57,19 @@
     command:
       cmd: docker-compose up airflow-init
     register: result
-  
+
+  - name: Creating directory
+    command:
+      cmd: mkdir -p opt/airflow/dags/
+      
   - name: Moving directories
-    ansible.builtin.command:
-      cmd: mv airflow-project/* dags/
-      warn: no
+    command:
+      cmd: mv home/ubuntu/data_engineer_end2end/handlers-airflow/airflow-project/* opt/airflow/dags/
 
   - name: Moving directories
-    ansible.builtin.command:
-      cmd: mv dags/dags/* dags/
-      warn: no
+    command:
+      cmd: mv opt/airflow/dags/dags/* opt/airflow/dags/
   
   - name: Start docker-compose
-    ansible.builtin.command:
+    command:
       cmd: docker-compose up
-      warn: no

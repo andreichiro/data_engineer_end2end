@@ -72,10 +72,7 @@ x-airflow-common:
     # WARNING: Use _PIP_ADDITIONAL_REQUIREMENTS option ONLY for a quick checks
     # for other purpose (development, test and especially production usage) build/extend Airflow image.
     _PIP_ADDITIONAL_REQUIREMENTS: ${_PIP_ADDITIONAL_REQUIREMENTS:-}
-    YOUTUBE_API_KEY: 'your_youtube_api_key'
-    AWS_ACCESS_KEY_ID: 'your_aws_access_key_id'
-    AWS_SECRET_ACCESS_KEY: 'your_aws_secret_access_key'
-  volumes:
+   volumes:
     - ${AIRFLOW_PROJ_DIR:-.}/dags:/opt/airflow/dags
     - ${AIRFLOW_PROJ_DIR:-.}/logs:/opt/airflow/logs
     - ${AIRFLOW_PROJ_DIR:-.}/config:/opt/airflow/config

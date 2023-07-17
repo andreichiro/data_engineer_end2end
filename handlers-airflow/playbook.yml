@@ -56,3 +56,19 @@
   - name: Run docker-compose up airflow-init
     command:
       cmd: docker-compose up airflow-init
+    register: result
+  
+  - name: Moving directories
+    ansible.builtin.command:
+      cmd: mv airflow-project/* dags/
+      warn: no
+
+  - name: Moving directories
+    ansible.builtin.command:
+      cmd: mv dags/dags/* dags/
+      warn: no
+  
+  - name: Start docker-compose
+    ansible.builtin.command:
+      cmd: docker-compose up
+      warn: no

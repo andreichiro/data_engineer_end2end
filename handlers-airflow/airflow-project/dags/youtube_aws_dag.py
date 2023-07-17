@@ -23,7 +23,7 @@ def get_video_ids_from_playlists(playlists):
 
 def fetch_and_upload(playlists, method='pandas'):
     # Load configuration
-    with open('config/config.json') as f:
+    with open('/opt/airflow/dags/config/config.json') as f:
         config = json.load(f)
 
     # Create hooks
@@ -41,17 +41,14 @@ def fetch_and_upload(playlists, method='pandas'):
     video_details = youtube_operator.fetch_video_details(video_ids)
 
     # Process and write video details to a file
-    with tempfile.NamedTemporaryFile(delete=False) as temp_file:
-        file_path = temp_file.name
-        processor = ProcessorFactory.create_processor(method)
-        processor.process(video_details, file_path)
+    file_path = '/opt/airflow/dags/video_airflow.parquet'
+    processor = ProcessorFactory.create_processor(method)
+    processor.process(video_details, file_path)
     
     # Upload to S3
     bucket_name = 'youtube-video-details'
-    s3_path = 'video_data/raw/parquet/file.parquet'
+    s3_path = 'video_data/raw/parquet/video_airflow.parquet'
     aws_operator.upload_to_s3(file_path, bucket_name, s3_path)
-
-    os.remove(file_path)
 
 dag = DAG(
     'youtube_video_details_dag',

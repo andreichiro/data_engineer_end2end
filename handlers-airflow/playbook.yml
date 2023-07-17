@@ -56,20 +56,3 @@
   - name: Run docker-compose up airflow-init
     command:
       cmd: docker-compose up airflow-init
-    register: result
-
-  - name: Creating directory
-    command:
-      cmd: mkdir -p opt/airflow/dags/
-      
-  - name: Moving directories
-    command:
-      cmd: mv home/ubuntu/data_engineer_end2end/handlers-airflow/airflow-project/* opt/airflow/dags/
-
-  - name: Moving directories
-    command:
-      cmd: mv opt/airflow/dags/dags/* opt/airflow/dags/
-  
-  - name: Start docker-compose
-    command:
-      cmd: docker-compose up

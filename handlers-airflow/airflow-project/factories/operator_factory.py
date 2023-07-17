@@ -1,5 +1,5 @@
-from dags.operators.aws_operator import AWSOperator
-from dags.operators.youtube_operator import YouTubeOperator
+from operators.aws_operator import AWSOperator
+from operators.youtube_operator import YouTubeOperator
 
 class OperatorFactory:
     @staticmethod

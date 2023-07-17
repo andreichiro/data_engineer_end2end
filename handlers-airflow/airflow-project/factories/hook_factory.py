@@ -1,5 +1,5 @@
-from dags.hooks.aws_hook import AWSHook
-from dags.hooks.youtube_hook import YouTubeHook
+from hooks.aws_hook import AWSHook
+from hooks.youtube_hook import YouTubeHook
 
 class HookFactory:
     hook_classes = {

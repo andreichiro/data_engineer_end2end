@@ -1,5 +1,5 @@
-from dags.processors.pandas_processor import PandasProcessor
-from dags.processors.spark_processor import SparkProcessor
+from processors.pandas_processor import PandasProcessor
+from processors.spark_processor import SparkProcessor
 
 class ProcessorFactory:
     processor_classes = {

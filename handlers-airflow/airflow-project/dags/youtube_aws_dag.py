@@ -5,10 +5,10 @@ from datetime import datetime
 import os
 import json
 
-from dags.abstract_classes.abstract_hook import AbstractHook
-from dags.factories.hook_factory import HookFactory
-from dags.factories.operator_factory import OperatorFactory
-from dags.factories.process_factory import ProcessorFactory
+from abstract_classes.abstract_hook import AbstractHook
+from factories.hook_factory import HookFactory
+from factories.operator_factory import OperatorFactory
+from factories.process_factory import ProcessorFactory
 
 from pytube import Playlist
 

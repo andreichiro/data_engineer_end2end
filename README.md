@@ -1,14 +1,15 @@
 # End to end Data engineer project
 
 # Introduction & Goals
-
-Hello! My name is Andre Ichiro, and I have developed this project to showcase my data engineering skills. The project leverages the YouTube API and Whisper transcriptions to provide video insights to data analysts through a data mart layer. Additionally, the transcriptions are used to train a Longformer Language Model (LLM) to answer and reproduce video contents.
+ 
+ Hello! My name is Andre Ichiro and this project represents my journey in the realm of data engineering. The project leverages the YouTube API and Whisper transcriptions to provide video insights to data analysts through a data mart layer. Additionally, the transcriptions are used to train a Longformer Language Model (LLM) to answer and reproduce video contents. 
 
 - Goals
   - Enable companies to develop a data strategy through an ELT (Extract, Load, Transform) approach;
   - Develop an automated data pipeline using a modern data stack that incorporates DevOps, Infrastructure as Code, containerization, testing, and data lakehouses;
   - Assist students in course forums by answering their questions or generating synthetic data to help teachers develop classes;
   - Fine-tune a LLM using customized data from video lessons;
+  - To demonstrate my skills in data engineering;
 
 - Overall
 The pipeline functions as expected, and the results are displayed in the samples folder, as well as yo can find data in the 'data' folder.
@@ -81,6 +82,8 @@ The following technologies were utilized throughout the project:
   
   - AWS Services: Leveraged multiple AWS services such as API Gateway, Lambda, Athena, and Kinesis for data ingestion, storage, and transformation. S3 triggers were set up to activate the staging layer in Databricks upon data arrival;
 
+  - Airflow: Orchestrated the data pipeline extraction process, running Python, Pandas, and Spark to extract video metadata, format, and upload it to S3;
+
   - Databricks, Spark, and Spark SQL: Employed for data transformation and data model creation. Flattening nested JSONs, identifying nulls and duplicates, enforcing schema, and testing functions using pytest were some of the tasks performed. Data was saved in multiple formats in S3;
 
   - dbt (Data Build Tool): Utilized for the intermediate and data mart layers, enabling the implementation of CTEs, normalizations, and a Snowflake schema. Source freshness testing, surrogate key construction, and data transformation were performed to provide insights to end-users;
@@ -88,7 +91,8 @@ The following technologies were utilized throughout the project:
   - Django Application in AWS ECS: Developed using Terraform and Docker as infrastructure as code. GitHub Actions ensured compatibility testing of the Django application across multiple operating systems, resulting in a thoroughly tested application. This application facilitates the training of an LLM with longchain to answer questions;
 
 # Demo
-To view a video demonstrating the project, click [here](https://)
+A demonstration video showcasing the project is currently under progress as I am incorporating Amazon Sagemaker with Hugging Face and deploying it within our Django application that runs on Amazon ECS.
+#To view a video demonstrating the project, click [here](https://) In progress.
 
 # Conclusion
 Throughout this project, several learning opportunities and challenges were encountered, testing fundamental technical skills for a data engineer. 
@@ -103,27 +107,21 @@ Key highlights include:
 The following tasks are yet to be completed:
 
   - Implement AWS Sagemaker and Hugging Face models using peft techniques;
-  - Develop an alternative version using Mage, Snowflake, and DocumentDB;
-  - Integrate Power BI, Tableau, or Looker for dashboard visualization;
+  - Develop an alternative version using Glue ETL, Athena and Snowflake;
+  - Integrate Power BI, Tableau, or Looker for dashboard visualization about the model's performance;
 
 - Future improvements
 To further enhance this project, the following improvements can be made:
 
-  - Test data quality providers for pipeline insertion;
-  - Create a Django REST API to enable real-time inference anywhere;
+   - Create a Django REST API to enable real-time inference anywhere;
   - Enable streaming with Spark, utilizing overlapping windows;
   - Explore data mesh and data contracts as potential enhancements;
-  - Incorporate Grafana for improved data observability;
+  - Incorporate a paralell MlOps pipeline;
 
-# Let's connect!
+# Let's connect
 
 Connect with me on [LinkedIn](https://www.linkedin.com/in/andré-ichiro-82592327) 
 
 # Appendix
 
 Refer to the [Markdown Cheat Sheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) for assistance with markdown.
-
-
-
-
-

@@ -1,14 +1,5 @@
 # End-to-End Data engineer project
 
-# Vitrine Dev
-
-| :placard: Vitrine.Dev |     |
-| -------------  | --- |
-| :sparkles: Nome        | **Data Engineer End-to-End**
-| :label: Tecnologias | python, spark, aws services, pandas, databricks, docker, terraform, airflow, dbt cloud
-| :rocket: URL         | https://github.com/andreichiro/data_engineer_end2end
-| :fire: portfolio     | Projeto para demonstração de habilidades
-
 <!-- imagem para a capa do projeto -->
 ![Data Engineer](./data_engineer.png#vitrinedev)
 
@@ -137,5 +128,14 @@ Connect with me on [LinkedIn](https://www.linkedin.com/in/andré-ichiro-82592327
 # Appendix
 
 Refer to the [Markdown Cheat Sheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) for assistance with markdown.
+
+# Vitrine Dev
+
+| :placard: Vitrine.Dev |     |
+| -------------  | --- |
+| :sparkles: Nome        | **Data Engineer End-to-End**
+| :label: Tecnologias | python, spark, aws services, pandas, databricks, docker, terraform, airflow, dbt cloud
+| :rocket: URL         | https://github.com/andreichiro/data_engineer_end2end
+| :fire: portfolio     | Projeto para demonstração de habilidades
 
 

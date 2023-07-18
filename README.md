@@ -1,4 +1,4 @@
-# End to end Data engineer project
+# End-to-End Data engineer project
 
 # Introduction & Goals
  

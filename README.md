@@ -44,7 +44,7 @@ The pipeline functions as expected, and the results are displayed in the samples
 The dataset consists of the following components:  
 
   - Transcripts: Stored as Parquet files, these files require downloading the YouTube videos and running Whisper to generate transcriptions. Organizing all the transcriptions is necessary for training the LLM;
-  - YouTube Data: Represented as JSON files, containing video id, channel title, description, views, likes, favorites and cooments counts, date and duration;
+  - YouTube Data: Represented as JSON files, containing video id, channel title, description, views, likes, favorites and comments counts, date and duration;
 
 - Dataset Selection
 This dataset was chosen for several reasons:

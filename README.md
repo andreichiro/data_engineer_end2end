@@ -95,7 +95,6 @@ The following technologies were utilized throughout the project:
 
 # Demo
 A demonstration video showcasing the project is currently under progress as I am incorporating Amazon Sagemaker with Hugging Face and deploying it within our Django application that runs on Amazon ECS.
-#To view a video demonstrating the project, click [here](https://) In progress.
 
 # Conclusion
 Throughout this project, several learning opportunities and challenges were encountered, testing fundamental technical skills for a data engineer. 

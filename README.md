@@ -136,4 +136,4 @@ Refer to the [Markdown Cheat Sheet](https://github.com/adam-p/markdown-here/wiki
 | :fire: portfolio     | Projeto para demonstração de habilidades
 
 <!-- imagem para a capa do projeto -->
-![Data Engineer](./data_engineer.jpg #vitrinedev)
+![Data Engineer](./data_engineer.png#vitrinedev)

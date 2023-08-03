@@ -1,6 +1,6 @@
 # End-to-End Data engineer project
 
-<!-- imagem para a capa do projeto -->
+<!-- imagem de capa do projeto -->
 ![Data Engineer](./data_engineer.png#vitrinedev)
 
 # Introduction & Goals
@@ -27,6 +27,9 @@ The pipeline functions as expected, and the results are displayed in the samples
     - aws: contains code for AWS services such as AWS Glue, AWS Lambda, AWS Gateway, S3 trigger's and Kinesis;
     - samples: provides samples from the aforementioned services;  
     - data: includes video content in different stages (raw, staging, intermediate, and data mart);
+
+<!-- diagrama do pipeline -->
+![Pipeline](./diagram.png)
       
 # Contents
 

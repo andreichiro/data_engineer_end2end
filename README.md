@@ -47,19 +47,23 @@ The pipeline functions as expected, and the results are displayed in the samples
 
 The dataset consists of the following components:  
 
-  - Transcripts: Stored as Parquet files, these files require downloading the YouTube videos and running Whisper to generate transcriptions. Organizing all the transcriptions is necessary for training the LLM;
-  - YouTube Data: Represented as JSON files, containing video id, channel title, description, views, likes, favorites and comments counts, date and duration;
+  - Transcripts
+    Stored as Parquet files, these files require downloading the YouTube videos and running Whisper to generate transcriptions. Organizing all the transcriptions is necessary for training the LLM;
+  - YouTube Data
+    Represented as JSON files, containing video id, channel title, description, views, likes, favorites and comments counts, date and duration;
 
 - Dataset Selection
+  This dataset was chosen for several reasons:
 
-This dataset was chosen for several reasons:
-
-  - Uniqueness: As a dataset created specifically for this project, it allows for practicing data modeling;
-  - Variety: Working with different file formats and nested dictionaries provides valuable experience;
-  - Realistic Business Problem: The dataset simulates a genuine business problem, allowing for practical skill application;
+  - Uniqueness
+    As a dataset created specifically for this project, it allows for practicing data modeling;
+  - Variety
+    Working with different file formats and nested dictionaries provides valuable experience;
+  - Realistic Business Problem
+    The dataset simulates a genuine business problem, allowing for practical skill application;
 
 - Objectives
-The objectives with this dataset are as follows:
+  The objectives with this dataset are as follows:
 
   - Implement multiple Common Table Expressions (CTEs) to enhance the data mart experience; 
   - Perform 1st, 2nd, and 3rd normalizations to ensure data integrity;
@@ -70,7 +74,7 @@ The objectives with this dataset are as follows:
 # Used Tools  
 
 - Motivation
-This project aimed to simulate a modern data stack, showcasing some familiarity in various technologies and skills relevant to a data engineer role:
+  This project aimed to simulate a modern data stack, showcasing some familiarity in various technologies and skills relevant to a data engineer role:
 
   - Terraform, Docker, Docker-Compose, Ansible, Github Actions; 
   - Multiple AWS Services; 
@@ -82,7 +86,7 @@ This project aimed to simulate a modern data stack, showcasing some familiarity 
   - Whisper (OpenAi);
 
 - Technologies used
-The following technologies were utilized throughout the project:
+  The following technologies were utilized throughout the project:
 
   - Terraform: Provisioned infrastructure as code, enabling efficient and reproducible deployment. Combined with Ansible, it facilitated dependency installation;
 

@@ -25,7 +25,7 @@ The pipeline functions as expected, and the results are displayed in the samples
     - application: contains code for terraform ECS, docker and Django application;
     - app_dbt: contains code for dbt cloud;
     - aws: contains code for AWS services such as AWS Glue, AWS Lambda, AWS Gateway, S3 trigger's and Kinesis;
-    - samples: provides samples from the aforementioned services;  
+    - samples: provides samples from the aforementioned services; 
     - data: includes video content in different stages (raw, staging, intermediate, and data mart);
 
 <!-- diagrama do pipeline -->
@@ -44,12 +44,14 @@ The pipeline functions as expected, and the results are displayed in the samples
 # The Data Set
 
 - Data
+
 The dataset consists of the following components:  
 
   - Transcripts: Stored as Parquet files, these files require downloading the YouTube videos and running Whisper to generate transcriptions. Organizing all the transcriptions is necessary for training the LLM;
   - YouTube Data: Represented as JSON files, containing video id, channel title, description, views, likes, favorites and comments counts, date and duration;
 
 - Dataset Selection
+
 This dataset was chosen for several reasons:
 
   - Uniqueness: As a dataset created specifically for this project, it allows for practicing data modeling;

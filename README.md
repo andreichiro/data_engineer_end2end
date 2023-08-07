@@ -70,7 +70,7 @@ The objectives with this dataset are as follows:
 # Used Tools  
 
 - Motivation
-This project aimed to simulate a modern data stack, showcasing some familiarity in various technologies and skills relevant to a junior data engineer role:
+This project aimed to simulate a modern data stack, showcasing some familiarity in various technologies and skills relevant to a data engineer role:
 
   - Terraform, Docker, Docker-Compose, Ansible, Github Actions; 
   - Multiple AWS Services; 

@@ -5,7 +5,7 @@
 
 # Introduction & Goals
  
- Hello! My name is Andre Ichiro and this project represents my journey in the realm of data engineering. The project leverages the YouTube API and Whisper transcriptions to provide video insights to data analysts through a data mart layer. Additionally, the transcriptions are used to train a Large Language Model (LLM) and longchai to answer and reproduce video contents. 
+ Hello! My name is Andre Ichiro and this project represents my journey in the realm of data engineering. The project leverages the YouTube API and Whisper transcriptions to provide video insights to data analysts through a data mart layer. Additionally, the transcriptions are used to train a Large Language Model (LLM) and longchain to answer and reproduce video contents. 
 
 - Goals
   - Enable companies to develop a data strategy through an ELT (Extract, Load, Transform) approach;

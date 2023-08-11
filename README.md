@@ -105,7 +105,7 @@ The dataset consists of the following components:
 
 - More specifically, the following technologies were utilized throughout the project:
 
-  - Terraform: Provisioned infrastructure as code, enabling efficient and reproducible deployment. Combined with Ansible, it facilitated dependency installation;
+  - Terraform: Provisioned infrastructure as code, enabling efficient and reproducible deployment. Combined with Ansible and Docker, it facilitated dependency installation;
 
   - Docker Compose: Used to initiate Apache Airflow for scheduling and orchestration. Airflow DAGs run a Python script to extract data from the YouTube API using an factory design pattern;
   

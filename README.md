@@ -125,23 +125,23 @@ A demonstration video showcasing the project is currently under progress as I am
 # Conclusion
 Throughout this project, several learning opportunities and challenges were encountered, testing fundamental technical skills for a data engineer. 
 
-Key highlights include:
+- Key highlights include:
 
   - Integration of different technologies, requiring extensive testing, research, and debugging;
   - Database building and modeling, which proved to be a challenging task requiring critical thinking and experimentation;
   - Acquisition of knowledge in Spark and Terraform through various learning sources, such as courses, books, and Stack Overflow;
   
-Remaining tasks
+- Remaining tasks
 
-The following tasks are yet to be completed:
+  The following tasks are yet to be completed:
 
   - Implement AWS Sagemaker and Hugging Face models using peft techniques;
   - Develop an alternative version using Glue ETL, Athena and Snowflake;
   - Integrate Power BI, Tableau, or Looker for dashboard visualization about the model's performance;
 
-Future improvements
+- Future improvements
 
-To further enhance this project, the following improvements can be made:
+  To further enhance this project, the following improvements can be made:
 
    - Create a Django REST API to enable real-time inference anywhere;
   - Enable streaming with Spark, utilizing overlapping windows and Kafka;

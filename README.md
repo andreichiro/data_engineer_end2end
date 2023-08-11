@@ -87,7 +87,9 @@ The dataset consists of the following components:
 
 - Motivation
 
-  This project aimed to simulate a modern data stack, showcasing some familiarity in various technologies and skills relevant to a data engineer role:
+  This project aimed to simulate a modern data stack, showcasing some familiarity in various technologies and skills relevant to a data engineer role.
+  
+- Stack
 
   - Terraform, Docker, Docker-Compose, Ansible, Github Actions; 
   - Multiple AWS Services - Glue, Kinesis, ECS, Athena, API Gateway, SageMaker (as well as load-balancers, subnets and so on) - in an event-driven architecture;
@@ -100,8 +102,8 @@ The dataset consists of the following components:
   - LLM, fine-tuning;
   - Data modeling, Medallion architecture, normalizations;
   - Design patterns (such as factory), Python abstract classes, problem-solving with Python;
-    
-- The following technologies were utilized throughout the project:
+
+- More specifically, the following technologies were utilized throughout the project:
 
   - Terraform: Provisioned infrastructure as code, enabling efficient and reproducible deployment. Combined with Ansible, it facilitated dependency installation;
 

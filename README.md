@@ -130,7 +130,7 @@ Key highlights include:
   - Integration of different technologies, requiring extensive testing, research, and debugging;
   - Database building and modeling, which proved to be a challenging task requiring critical thinking and experimentation;
   - Acquisition of knowledge in Spark and Terraform through various learning sources, such as courses, books, and Stack Overflow;
-
+  
 - Remaining tasks
 
 The following tasks are yet to be completed:

@@ -50,21 +50,31 @@ The pipeline functions as expected, and the results are displayed in the samples
 The dataset consists of the following components:  
 
   - Transcripts
+
     Stored as Parquet files, these files require downloading the YouTube videos and running Whisper to generate transcriptions. Organizing all the transcriptions is necessary for training the LLM;
+    
   - YouTube Data
+
     Represented as JSON files, containing video id, channel title, description, views, likes, favorites and comments counts, date and duration;
 
 - Dataset Selection
+
   This dataset was chosen for several reasons:
 
   - Uniqueness
+ 
     As a dataset created specifically for this project, it allows for practicing data modeling;
+    
   - Variety
+ 
     Working with different file formats and nested dictionaries provides valuable experience;
+    
   - Realistic Business Problem
+ 
     The dataset simulates a genuine business problem, allowing for practical skill application;
 
 - Objectives
+
   The objectives with this dataset are as follows:
 
   - Implement multiple Common Table Expressions (CTEs) to enhance the data mart experience; 
@@ -76,23 +86,26 @@ The dataset consists of the following components:
 # Used Tools  
 
 - Motivation
+
   This project aimed to simulate a modern data stack, showcasing some familiarity in various technologies and skills relevant to a data engineer role:
 
   - Terraform, Docker, Docker-Compose, Ansible, Github Actions; 
-  - Multiple AWS Services; 
-  - Databricks, Spark and Spark SQL;
-  - Pyhon, pandas and Django;
+  - Multiple AWS Services - Glue, Kinesis, ECS, Athena, API Gateway, SageMaker (as well as load-balancers, subnets and so on) - in an event-driven architecture;
+  - Databricks, Pyspark and Spark SQL;
+  - Python, Pandas, Databases and Django;
   - Airflow;
   - dbt cloud;
-  - YouTube API;
+  - API;
   - Whisper (OpenAi);
-
-- Technologies used
-  The following technologies were utilized throughout the project:
+  - LLM, fine-tuning;
+  - Data modeling, Medallion architecture, normalizations;
+  - Design patterns (such as factory), Python abstract classes, problem-solving with Python;
+    
+  - The following technologies were utilized throughout the project:
 
   - Terraform: Provisioned infrastructure as code, enabling efficient and reproducible deployment. Combined with Ansible, it facilitated dependency installation;
 
-  - Docker Compose: Used to initiate Apache Airflow for scheduling and orchestration. Airflow DAGs run a Python script to extract data from the YouTube API using an adapter design pattern;
+  - Docker Compose: Used to initiate Apache Airflow for scheduling and orchestration. Airflow DAGs run a Python script to extract data from the YouTube API using an factory design pattern;
   
   - AWS Services: Leveraged multiple AWS services such as API Gateway, Lambda, Athena, and Kinesis for data ingestion, storage, and transformation. S3 triggers were set up to activate the staging layer in Databricks upon data arrival;
 
@@ -102,10 +115,10 @@ The dataset consists of the following components:
 
   - dbt (Data Build Tool): Utilized for the intermediate and data mart layers, enabling the implementation of CTEs, normalizations, and a Snowflake schema. Source freshness testing, surrogate key construction, and data transformation were performed to provide insights to end-users;
   
-  - Django Application in AWS ECS: Developed using Terraform and Docker as infrastructure as code. GitHub Actions ensured compatibility testing of the Django application across multiple operating systems, resulting in a thoroughly tested application. This application facilitates the training of an LLM with longchain to answer questions;
+  - Django Application in AWS ECS: Developed using Terraform and Docker as infrastructure as code. GitHub Actions ensured compatibility testing of the Django application across multiple operating systems, resulting in a thoroughly tested application. This Django application is the back-end for inference with the fine-tuned LLM with longchain to answer questions;
 
 # Demo
-A demonstration video showcasing the project is currently under progress as I am incorporating Amazon Sagemaker with Hugging Face and deploying it within our Django application that runs on Amazon ECS.
+A demonstration video showcasing the project is currently under progress as I am incorporating Amazon Sagemaker with Hugging Face and deploying it within our Django application that runs on Amazon ECS with a streamlit front-end.
 
 # Conclusion
 Throughout this project, several learning opportunities and challenges were encountered, testing fundamental technical skills for a data engineer. 
@@ -127,7 +140,7 @@ The following tasks are yet to be completed:
 To further enhance this project, the following improvements can be made:
 
    - Create a Django REST API to enable real-time inference anywhere;
-  - Enable streaming with Spark, utilizing overlapping windows;
+  - Enable streaming with Spark, utilizing overlapping windows and Kafka;
   - Explore data mesh and data contracts as potential enhancements;
   - Incorporate a paralell MlOps pipeline;
 

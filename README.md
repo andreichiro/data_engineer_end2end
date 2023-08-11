@@ -130,6 +130,7 @@ Key highlights include:
   - Acquisition of knowledge in Spark and Terraform through various learning sources, such as courses, books, and Stack Overflow;
 
 - Remaining tasks
+
 The following tasks are yet to be completed:
 
   - Implement AWS Sagemaker and Hugging Face models using peft techniques;
@@ -137,6 +138,7 @@ The following tasks are yet to be completed:
   - Integrate Power BI, Tableau, or Looker for dashboard visualization about the model's performance;
 
 - Future improvements
+
 To further enhance this project, the following improvements can be made:
 
    - Create a Django REST API to enable real-time inference anywhere;

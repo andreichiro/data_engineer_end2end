@@ -9,15 +9,17 @@
 
 - Goals
   - Enable companies to develop a data strategy through an ELT (Extract, Load, Transform) approach;
-  - Develop an automated data pipeline using a modern data stack that incorporates DevOps, Infrastructure as Code, containerization, testing, and data lakehouses;
+  - Develop an automated data pipeline using a modern data stack that incorporates DevOps, Infrastructure as Code, containerization, testing, and data lakehouse;
   - Assist students in course forums by answering their questions or generating synthetic data to help teachers develop classes;
   - Fine-tune a LLM using customized data from video lessons;
   - To demonstrate my skills in data engineering;
 
 - Overall
-The pipeline functions as expected, and the results are displayed in the samples folder, as well as yo can find data in the 'data' folder.
+
+The pipeline functions as expected, and the results are displayed in the samples folder, as well as you can find data in the 'data' folder.
 
  - Project Structure
+
  To navigate through this project's folder structure, refer to the following sections:
 
     - handlers-airflow: contains code for terraform, ansible, airflow, docker-compose;   

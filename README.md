@@ -101,7 +101,7 @@ The dataset consists of the following components:
   - Data modeling, Medallion architecture, normalizations;
   - Design patterns (such as factory), Python abstract classes, problem-solving with Python;
     
-  - The following technologies were utilized throughout the project:
+- The following technologies were utilized throughout the project:
 
   - Terraform: Provisioned infrastructure as code, enabling efficient and reproducible deployment. Combined with Ansible, it facilitated dependency installation;
 
